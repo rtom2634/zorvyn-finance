@@ -1,73 +1,38 @@
-# React + TypeScript + Vite
+📊 FINTRACK: Professional Finance Analytics Dashboard
+Zorvyn Frontend Developer Intern Assignment
+FinVue is a comprehensive financial tracking interface designed to bridge the gap between complex data and user-centric design. This project focuses on delivering a "production-ready" feel through interactive visualizations, robust state management, and localized user experiences.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+🚀 Key Features
+Interactive Analytics: Dynamic data visualization using Recharts, allowing users to track balance trends and categorical spending patterns at a glance.
 
-Currently, two official plugins are available:
+Simulated RBAC (Role-Based Access Control): A built-in role switcher that live-updates the UI.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Viewer Mode: Read-only access to insights.
 
-## React Compiler
+Admin Mode: Unlocks management features like adding, editing, and deleting transactions.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Global Localization: A centralized currency provider that instantly formats all financial data across the app (USD, EUR, GBP).
 
-## Expanding the ESLint configuration
+Advanced Data Management: * Real-time search and multi-category filtering.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Dynamic sorting by date, amount, and transaction type.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+Responsive & Polished UI: Built with a mobile-first approach using Tailwind CSS, featuring glassmorphism elements, smooth transitions, and custom-designed status badges.
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+🛠️ Technical Stack
+Core: React.js (Vite)
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+State Management: Context API / Zustand (Efficiently handling global roles and currency state)
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Styling: Tailwind CSS (Custom color palette, responsive grid layouts)
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Charts: Recharts (Area & Pie charts)
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Icons: Lucide-React
+
+🧠 Architectural Decisions
+Modular Component Design: Every UI element (Table, StatCards, Charts) is isolated to ensure reusability and easier testing.
+
+Logic Separation: Financial calculations (highest spending, monthly comparisons) are decoupled from the UI components into dedicated utility functions.
+
+Graceful States: Integrated handling for "Empty Data" and "Loading" states to ensure the user is never left with a broken UI.
